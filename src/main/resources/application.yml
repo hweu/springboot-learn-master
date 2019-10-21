@@ -16,12 +16,12 @@ spring:
         lettuce:
           shutdown-timeout: 0
         timeout: 5000
+  data:
+      elasticsearch:
+          repositories:
+              enabled: true
+          cluster-nodes: 127.0.0.1:9300
 mybatis:
    mapperLocations: classpath:/mapper/*.xml
 logging:
    config: classpath:log4j2_dev.yml
-data:
-    elasticsearch:
-        repositories:
-            enabled: true
-        cluster-nodes: 127.0.0.1:9300

@@ -9,8 +9,6 @@ import java.io.Serializable;
  */
 @Document(indexName = "cityindex", type = "city")
 public class City implements Serializable {
-    private static final long serialVersionUID = -1L;
-
     /**
      * 城市编号
      */

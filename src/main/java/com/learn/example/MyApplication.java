@@ -6,17 +6,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @author: hweu
  * @description: SpringBoot启动类
  * @date: 2017/10/24 11:55
  */
+@EnableScheduling
 @SpringBootApplication
-@MapperScan("com.heeexy.example.dao")
+@MapperScan("com.learn.example.dao")
 public class MyApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
+		System.setProperty("es.set.netty.runtime.available.processors", "false");
 		SpringApplication application = new SpringApplication(MyApplication.class);
 		application.setBannerMode(Banner.Mode.OFF);
 		application.run(args);

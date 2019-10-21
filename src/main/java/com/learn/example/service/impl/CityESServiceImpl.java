@@ -1,7 +1,6 @@
 package com.learn.example.service.impl;
 
 import com.learn.example.model.City;
-import com.learn.example.repository.CityRepository;
 import com.learn.example.service.CityESService;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
@@ -28,13 +27,14 @@ public class CityESServiceImpl implements CityESService {
     String SCORE_MODE_SUM = "sum"; // 权重分求和模式
     Float  MIN_SCORE = 10.0F;      // 由于无相关性的分值默认为 1 ，设置权重分最小值为 10
 
-    @Autowired
-    CityRepository cityRepository;
+    /*@Autowired
+    private CityRepository cityRepository;*/
 
     @Override
     public Long saveCity(City city) {
-        City cityResult = (City) cityRepository.save(city);
-        return cityResult.getId();
+        /*City cityResult = (City) cityRepository.save(city);
+        return cityResult.getId();*/
+        return null;
     }
 
     @Override
@@ -52,8 +52,9 @@ public class CityESServiceImpl implements CityESService {
 
         Pageable pageable = new PageRequest(pageNumber, pageSize);
 
-        Page<City> cityPage = cityRepository.search(getCitySearchQuery(searchContent),pageable);
-        return cityPage.getContent();
+        //Page<City> cityPage = cityRepository.search(getCitySearchQuery(searchContent),pageable);
+        //return cityPage.getContent();
+        return null;
     }
 
     /**
